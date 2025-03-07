@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +41,10 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Add hover styles for buttons */
+.button-glow:hover {
+  color: white !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
