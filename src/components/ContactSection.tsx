@@ -24,16 +24,20 @@ const ContactSection = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
-            <Card className="rounded-xl border border-gray-800 bg-black bg-opacity-50 overflow-hidden animate-reveal-from-left">
-              <CardContent className="p-0">
-                <div className="relative w-full aspect-video">
-                  <iframe 
-                    src="https://calendly.com/prakarshgupta/30min" 
-                    className="absolute inset-0 w-full h-full"
-                    frameBorder="0"
-                    title="Schedule a call with Prakarsh Gupta"
-                  />
-                </div>
+            <Card className="rounded-xl border border-gray-800 bg-black bg-opacity-50 overflow-hidden animate-reveal-from-left p-8">
+              <CardContent className="p-0 flex flex-col gap-6 h-full justify-center">
+                <h4 className="text-2xl font-bold text-white mb-2">Let's Connect</h4>
+                <p className="text-gray-300 mb-6">
+                  Ready to transform your business with AI? Book a free strategy call, and let's discuss how we can help you achieve your goals.
+                </p>
+                <Button 
+                  className="bg-smallai-purple hover:bg-smallai-purple-dark text-white rounded-full px-8 py-6 text-lg button-glow w-full sm:w-auto"
+                  asChild
+                >
+                  <a href="https://calendly.com/prakarshgupta" target="_blank" rel="noopener noreferrer">
+                    Schedule a Strategy Call
+                  </a>
+                </Button>
               </CardContent>
             </Card>
             
@@ -67,10 +71,10 @@ const ContactSection = () => {
                     <h4 className="text-xl font-semibold mb-2 text-white">Send us an Email</h4>
                     <p className="text-gray-400 mb-1">We'll get back to you as soon as possible.</p>
                     <a 
-                      href="mailto:prakarshgupta2051@gmail.com" 
+                      href="mailto:prakarshgupta02051@gmail.com" 
                       className="text-smallai-purple hover:text-smallai-purple-light transition-colors"
                     >
-                      prakarshgupta2051@gmail.com
+                      prakarshgupta02051@gmail.com
                     </a>
                   </div>
                 </div>

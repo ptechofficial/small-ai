@@ -1,7 +1,13 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Twitter, Instagram } from 'lucide-react';
+import { Linkedin, Mail, Twitter, Instagram, Youtube, TiktokIcon } from 'lucide-react';
+
+const TikTok = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+  </svg>
+);
 
 const Footer = () => {
   return (
@@ -25,7 +31,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/prakkarshh" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-smallai-purple transition-colors"
@@ -34,16 +40,7 @@ const Footer = () => {
                 <Twitter size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-smallai-purple transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/smallai.automation" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-smallai-purple transition-colors"
@@ -52,7 +49,25 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="mailto:prakarshgupta2051@gmail.com" 
+                href="https://www.youtube.com/@smallgrp" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-smallai-purple transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube size={20} />
+              </a>
+              <a 
+                href="https://vt.tiktok.com/ZSMxNePcG/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-smallai-purple transition-colors"
+                aria-label="TikTok"
+              >
+                <TikTok />
+              </a>
+              <a 
+                href="mailto:prakarshgupta02051@gmail.com" 
                 className="text-gray-400 hover:text-smallai-purple transition-colors"
                 aria-label="Email"
               >
@@ -91,22 +106,22 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-smallai-purple transition-colors">
+                <a href="/services" className="text-gray-400 hover:text-smallai-purple transition-colors">
                   AI Agents
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-smallai-purple transition-colors">
+                <a href="/services" className="text-gray-400 hover:text-smallai-purple transition-colors">
                   Workflow Automation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-smallai-purple transition-colors">
+                <a href="/services" className="text-gray-400 hover:text-smallai-purple transition-colors">
                   AI Strategy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-smallai-purple transition-colors">
+                <a href="/services" className="text-gray-400 hover:text-smallai-purple transition-colors">
                   Data Intelligence
                 </a>
               </li>
@@ -114,24 +129,34 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-1">
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
+            <h4 className="text-white font-semibold mb-4">Connect</h4>
             <ul className="space-y-2">
               <li className="text-gray-400">
                 <a 
-                  href="mailto:prakarshgupta2051@gmail.com"
+                  href="mailto:prakarshgupta02051@gmail.com"
                   className="text-gray-400 hover:text-smallai-purple transition-colors"
                 >
-                  prakarshgupta2051@gmail.com
+                  prakarshgupta02051@gmail.com
                 </a>
               </li>
               <li className="text-gray-400">
                 <a 
-                  href="https://www.smallgrp.com"
+                  href="https://www.youtube.com/@smallgrp"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-smallai-purple transition-colors"
                 >
-                  www.smallgrp.com
+                  YouTube: @smallgrp
+                </a>
+              </li>
+              <li className="text-gray-400">
+                <a 
+                  href="https://www.instagram.com/smallai.automation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-smallai-purple transition-colors"
+                >
+                  Instagram: @smallai.automation
                 </a>
               </li>
               <li>
