@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Bot, Brain, Circuit, MessageSquare, GitBranch, BarChart } from 'lucide-react';
+import { ArrowRight, Bot, Brain, Cpu, MessageSquare, GitBranch, BarChart } from 'lucide-react';
 
 const ServicesSection = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -49,7 +49,7 @@ const ServicesSection = () => {
       description: "Strategic guidance on implementing AI in your business, with roadmaps tailored to your specific goals and challenges.",
     },
     {
-      icon: <Circuit className="h-8 w-8 text-smallai-purple" />,
+      icon: <Cpu className="h-8 w-8 text-smallai-purple" />,
       title: "Workflow Automation",
       description: "End-to-end automation of business processes using AI and no-code tools to reduce manual tasks and increase efficiency.",
     },
