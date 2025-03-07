@@ -1,16 +1,13 @@
 
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import ServicesSection from '@/components/ServicesSection';
-import ContactSection from '@/components/ContactSection';
-import LogoCloud from '@/components/LogoCloud';
 import Footer from '@/components/Footer';
+import ContactSection from '@/components/ContactSection';
 
-const Index = () => {
+const Contact = () => {
   useEffect(() => {
     // Set document title
-    document.title = "Small AI - AI Automation Agency";
+    document.title = "Contact Us | Small AI - AI Automation Agency";
     
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
@@ -19,10 +16,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-smallai-black text-white">
       <Navbar />
-      <main>
-        <Hero />
-        <LogoCloud />
-        <ServicesSection />
+      <main className="pt-20">
         <ContactSection />
       </main>
       <Footer />
@@ -30,4 +24,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Contact;
