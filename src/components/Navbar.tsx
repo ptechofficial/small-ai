@@ -39,13 +39,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img 
-            src="/lovable-uploads/9366fa9a-75de-4c5b-a01b-61eab95cbe4a.png" 
-            alt="Small AI Logo" 
-            className="h-12 w-auto mr-3"
-          />
           <h1 className="text-2xl font-bold tracking-tight">
-            <span className="text-smallai-white">Small</span>
+            <span className="text-smallai-white">Small </span>
             <span className="text-smallai-purple">AI</span>
           </h1>
         </Link>

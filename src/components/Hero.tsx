@@ -43,12 +43,21 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen bg-smallai-black pt-28 pb-16 overflow-hidden">
+      {/* Background Image Overlay with Gradient */}
+      <div className="absolute inset-0 opacity-20" style={{ 
+        backgroundImage: `url('/lovable-uploads/81261355-b1d0-4a8d-8a15-94209160f1bd.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        mixBlendMode: 'overlay',
+        zIndex: 1
+      }} />
+      
       {/* Gradient Background */}
-      <div className="absolute top-0 right-0 w-full md:w-3/4 h-full opacity-20 bg-gradient-radial from-smallai-purple to-transparent" style={{ filter: 'blur(120px)' }} />
+      <div className="absolute top-0 right-0 w-full md:w-3/4 h-full opacity-20 bg-gradient-radial from-smallai-purple to-transparent" style={{ filter: 'blur(120px)', zIndex: 2 }} />
       
       {/* Floating Elements */}
-      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-smallai-blue-dark opacity-20 rounded-full floating" style={{ filter: 'blur(50px)' }} />
-      <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-smallai-purple-dark opacity-20 rounded-full floating-slow" style={{ filter: 'blur(60px)' }} />
+      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-smallai-blue-dark opacity-20 rounded-full floating" style={{ filter: 'blur(50px)', zIndex: 3 }} />
+      <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-smallai-purple-dark opacity-20 rounded-full floating-slow" style={{ filter: 'blur(60px)', zIndex: 3 }} />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" ref={elementsRef}>
@@ -108,8 +117,9 @@ const Hero = () => {
           </div>
           
           <div className="lg:col-span-5 relative reveal-animation">
+            {/* Added the image as a background overlay on this container */}
             <div className="relative rounded-2xl overflow-hidden border border-gray-800">
-              <div className="absolute inset-0 bg-gradient-purple-blue opacity-20" />
+              <div className="absolute inset-0 bg-gradient-purple-blue opacity-30" />
               <img 
                 src="/lovable-uploads/4f42fa51-87f7-402a-be0b-539f276618a4.png" 
                 alt="Prakarsh Gupta - Small AI" 
