@@ -67,11 +67,12 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-balance">
-              Boost Revenue with <span className="gradient-text">AI-Powered</span> Automation
+              Boost your business with <span className="gradient-text">AI</span>
             </h1>
             
             <p className="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
-              Custom AI solutions that cut costs by 40%, save 20+ hours weekly, and drive measurable growth for your business.
+              Teams Waste 6 Months Building AI That Fails.<br/>
+              Yours Won't ☝️
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
