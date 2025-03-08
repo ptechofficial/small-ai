@@ -220,3 +220,38 @@
 .floating-slower {
   animation: floating 8s ease-in-out infinite;
 }
+
+/* Carousel animations */
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.animate-move-right {
+  animation: moveRight 40s linear infinite;
+  min-width: 100%;
+}
+
+.animate-move-left {
+  animation: moveLeft 40s linear infinite;
+  min-width: 100%;
+}

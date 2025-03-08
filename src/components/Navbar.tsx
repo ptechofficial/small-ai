@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,13 +58,13 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        isScrolled ? 'py-3 glassmorphism' : 'py-6'
+        isScrolled ? 'py-3 glassmorphism dark:bg-black/50' : 'py-6 dark:bg-transparent bg-transparent'
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="flex items-center">
           <h1 className="text-2xl font-bold tracking-tight">
-            <span className="text-smallai-white">Small </span>
+            <span className="text-white dark:text-white">Small </span>
             <span className="text-smallai-purple">AI</span>
           </h1>
         </a>
@@ -77,12 +78,13 @@ const Navbar = () => {
               onClick={(e) => { e.preventDefault(); scrollToSection(link.section); }}
               className={cn(
                 "nav-link text-sm font-medium transition-colors hover:text-white",
-                activeSection === link.section ? "text-smallai-purple" : "text-smallai-white"
+                activeSection === link.section ? "text-smallai-purple" : "text-white dark:text-white"
               )}
             >
               {link.name}
             </a>
           ))}
+          <ThemeToggle />
           <Button 
             className="bg-smallai-purple hover:bg-smallai-purple-dark hover:text-white text-white rounded-full px-6 button-glow"
             asChild
@@ -93,18 +95,21 @@ const Navbar = () => {
           </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-smallai-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Menu Button and Theme Toggle */}
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button 
+            className="text-white dark:text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-smallai-black py-4 border-t border-gray-800 animate-fade-in">
+          <div className="md:hidden absolute top-full left-0 w-full bg-black dark:bg-black py-4 border-t border-gray-800 animate-fade-in">
             <nav className="container mx-auto px-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
@@ -113,7 +118,7 @@ const Navbar = () => {
                   onClick={(e) => { e.preventDefault(); scrollToSection(link.section); }}
                   className={cn(
                     "text-sm font-medium transition-colors hover:text-white py-2",
-                    activeSection === link.section ? "text-smallai-purple" : "text-smallai-white"
+                    activeSection === link.section ? "text-smallai-purple" : "text-white dark:text-white"
                   )}
                 >
                   {link.name}
