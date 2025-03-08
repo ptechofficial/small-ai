@@ -42,10 +42,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen bg-smallai-black dark:bg-smallai-black pt-28 pb-16 overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-smallai-black pt-28 pb-16 overflow-hidden">
       {/* Background Image Overlay with Gradient */}
       <div className="absolute inset-0 opacity-20" style={{ 
-        backgroundImage: `url('/lovable-uploads/cc183401-60c7-4948-ae52-386a766b5d7f.png')`,
+        backgroundImage: `url('/lovable-uploads/81261355-b1d0-4a8d-8a15-94209160f1bd.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         mixBlendMode: 'overlay',
@@ -66,14 +66,12 @@ const Hero = () => {
               AI Automation Agency
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-balance text-white dark:text-white">
-              Boost your business <span className="gradient-text">with AI</span>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-balance">
+              Boost Revenue with <span className="gradient-text">AI-Powered</span> Automation
             </h1>
             
             <p className="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
-              Teams Waste 6 Months Building AI That Fails.<br />
-              Yours Won't ☝️<br />
-              Deploy Smart AI agents, built for scale, quality and speed.
+              Custom AI solutions that cut costs by 40%, save 20+ hours weekly, and drive measurable growth for your business.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -112,12 +110,12 @@ const Hero = () => {
                 <div 
                   key={i} 
                   className={cn(
-                    "p-4 rounded-lg border border-gray-800 bg-black bg-opacity-50 dark:bg-black dark:bg-opacity-50",
+                    "p-4 rounded-lg border border-gray-800 bg-black bg-opacity-50",
                     "transition-all duration-300 hover:border-smallai-purple hover:bg-smallai-purple hover:bg-opacity-5"
                   )}
                 >
                   <div className="mb-3">{item.icon}</div>
-                  <h3 className="font-medium text-white dark:text-white mb-1">{item.title}</h3>
+                  <h3 className="font-medium text-white mb-1">{item.title}</h3>
                   <p className="text-gray-400 text-sm">{item.desc}</p>
                 </div>
               ))}
@@ -138,7 +136,7 @@ const Hero = () => {
             <div className="absolute -bottom-6 -left-6 p-4 glassmorphism rounded-xl border border-smallai-purple border-opacity-20 w-48 animate-fade-in">
               <div className="flex items-center">
                 <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
-                <p className="text-xs font-medium text-white dark:text-white">AI Agents Online</p>
+                <p className="text-xs font-medium text-white">AI Agents Online</p>
               </div>
               <p className="text-gray-300 text-xs mt-1">80% reduction in response time</p>
             </div>
@@ -146,7 +144,7 @@ const Hero = () => {
             <div className="absolute -top-4 -right-4 p-4 glassmorphism rounded-xl border border-smallai-purple border-opacity-20 w-48 animate-fade-in delay-200">
               <div className="flex items-center">
                 <div className="w-3 h-3 rounded-full bg-smallai-purple mr-2" />
-                <p className="text-xs font-medium text-white dark:text-white">Part of Small Group</p>
+                <p className="text-xs font-medium text-white">Part of Small Group</p>
               </div>
               <p className="text-gray-300 text-xs mt-1">Trusted by 50+ businesses</p>
             </div>

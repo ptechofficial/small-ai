@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import ServicesSection from '@/components/ServicesSection';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
-import LogoCarousel from '@/components/LogoCarousel';
+import LogoCloud from '@/components/LogoCloud';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -18,11 +18,11 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background dark:bg-background text-foreground dark:text-foreground">
+    <div className="min-h-screen bg-smallai-black text-white">
       <Navbar />
       <main>
         <Hero />
-        <LogoCarousel />
+        <LogoCloud />
         <ServicesSection />
         <AboutSection />
         <ContactSection />
