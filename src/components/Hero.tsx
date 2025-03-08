@@ -42,7 +42,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-smallai-black pt-28 pb-16 overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-smallai-black pt-28 pb-16 overflow-hidden">
       {/* Background Image Overlay with Gradient */}
       <div className="absolute inset-0 opacity-20" style={{ 
         backgroundImage: `url('/lovable-uploads/81261355-b1d0-4a8d-8a15-94209160f1bd.png')`,
@@ -67,11 +67,11 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-balance">
-              Turn Your Business <span className="gradient-text">AI-Powered</span> with Automation
+              Boost Revenue with <span className="gradient-text">AI-Powered</span> Automation
             </h1>
             
             <p className="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
-              We build custom AI solutions that automate your workflows, enhance customer experiences, and drive growth. From AI agents to advanced automations, we help you harness the power of artificial intelligence.
+              Custom AI solutions that cut costs by 40%, save 20+ hours weekly, and drive measurable growth for your business.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -86,20 +86,26 @@ const Hero = () => {
               
               <Button 
                 variant="outline" 
-                className="border-smallai-purple text-smallai-purple hover:bg-smallai-purple hover:bg-opacity-10 rounded-full px-8 py-6 text-lg"
-                asChild
+                className="border-smallai-purple text-smallai-purple hover:bg-smallai-purple hover:text-white hover:bg-opacity-10 rounded-full px-8 py-6 text-lg"
+                onClick={() => {
+                  const servicesSection = document.getElementById('services');
+                  if (servicesSection) {
+                    window.scrollTo({
+                      top: servicesSection.offsetTop - 80,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
               >
-                <a href="/services">
-                  Explore Services
-                </a>
+                Explore Services
               </Button>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { icon: <Cpu className="h-6 w-6 text-smallai-purple" />, title: "AI Agents", desc: "Custom AI agents to handle tasks 24/7" },
-                { icon: <Zap className="h-6 w-6 text-smallai-purple" />, title: "Workflow Automation", desc: "Streamlined business processes" },
-                { icon: <Database className="h-6 w-6 text-smallai-purple" />, title: "Data Intelligence", desc: "Actionable insights from your data" }
+                { icon: <Cpu className="h-6 w-6 text-smallai-purple" />, title: "AI Agents", desc: "24/7 operation, 0 human input" },
+                { icon: <Zap className="h-6 w-6 text-smallai-purple" />, title: "Workflow Automation", desc: "30% cost reduction" },
+                { icon: <Database className="h-6 w-6 text-smallai-purple" />, title: "Data Intelligence", desc: "2x faster decisions" }
               ].map((item, i) => (
                 <div 
                   key={i} 
@@ -132,7 +138,7 @@ const Hero = () => {
                 <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
                 <p className="text-xs font-medium text-white">AI Agents Online</p>
               </div>
-              <p className="text-gray-300 text-xs mt-1">Processing customer queries 24/7</p>
+              <p className="text-gray-300 text-xs mt-1">80% reduction in response time</p>
             </div>
             
             <div className="absolute -top-4 -right-4 p-4 glassmorphism rounded-xl border border-smallai-purple border-opacity-20 w-48 animate-fade-in delay-200">
@@ -140,7 +146,7 @@ const Hero = () => {
                 <div className="w-3 h-3 rounded-full bg-smallai-purple mr-2" />
                 <p className="text-xs font-medium text-white">Part of Small Group</p>
               </div>
-              <p className="text-gray-300 text-xs mt-1">Innovative AI solutions</p>
+              <p className="text-gray-300 text-xs mt-1">Trusted by 50+ businesses</p>
             </div>
           </div>
         </div>

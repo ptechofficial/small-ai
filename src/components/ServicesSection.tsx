@@ -41,32 +41,32 @@ const ServicesSection = () => {
     {
       icon: <Bot className="h-8 w-8 text-smallai-purple" />,
       title: "AI Agents Development",
-      description: "Custom AI agents that can handle customer queries, sales processes, and operational tasks 24/7, without human intervention.",
+      description: "24/7 autonomous customer support. Reduce staffing costs by 60% while improving satisfaction scores by 35%.",
     },
     {
       icon: <Brain className="h-8 w-8 text-smallai-purple" />,
       title: "AI Strategy Consulting",
-      description: "Strategic guidance on implementing AI in your business, with roadmaps tailored to your specific goals and challenges.",
+      description: "ROI-focused implementation roadmaps. Achieve 40% faster time-to-value on AI investments.",
     },
     {
       icon: <Cpu className="h-8 w-8 text-smallai-purple" />,
       title: "Workflow Automation",
-      description: "End-to-end automation of business processes using AI and no-code tools to reduce manual tasks and increase efficiency.",
+      description: "Cut operational costs by 30%. Reduce manual tasks by 80% and eliminate human error.",
     },
     {
       icon: <MessageSquare className="h-8 w-8 text-smallai-purple" />,
       title: "Conversational AI Systems",
-      description: "Advanced chatbots and voice assistants powered by large language models to provide human-like interactions.",
+      description: "3x conversion rates with AI-driven engagement. Generate qualified leads automatically 24/7.",
     },
     {
       icon: <GitBranch className="h-8 w-8 text-smallai-purple" />,
       title: "AI Integration Services",
-      description: "Seamless integration of AI technologies with your existing systems, CRM, and other business software.",
+      description: "Seamless connection with existing systems. Increase operational efficiency by 45%.",
     },
     {
       icon: <BarChart className="h-8 w-8 text-smallai-purple" />,
       title: "Data Intelligence",
-      description: "Transform your raw data into actionable insights and predictive models that drive better business decisions.",
+      description: "Turn raw data into profit. Make decisions 2x faster with 90% more accuracy.",
     }
   ];
 
@@ -80,10 +80,10 @@ const ServicesSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16 animate-reveal-from-top">
           <h2 className="text-sm uppercase tracking-wider text-smallai-purple mb-3 font-medium">Our Services</h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-balance">
-            AI Solutions to <span className="gradient-text">Transform</span> Your Business
+            AI Solutions that <span className="gradient-text">Deliver ROI</span>
           </h3>
           <p className="text-gray-300 text-lg">
-            We specialize in building custom AI solutions that automate workflows, enhance customer experiences, and provide actionable insights.
+            Proven solutions that cut costs, increase revenue, and drive measurable business growth.
           </p>
         </div>
         
@@ -99,7 +99,7 @@ const ServicesSection = () => {
               <p className="text-gray-400 mb-6">{service.description}</p>
               <Button 
                 variant="link" 
-                className="text-smallai-purple p-0 hover:text-smallai-purple-light group"
+                className="text-smallai-purple p-0 hover:text-white group"
                 asChild
               >
                 <a href="https://calendly.com/prakarshgupta" target="_blank" rel="noopener noreferrer">

@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -8,11 +7,28 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      
+      // Determine active section for highlighting in navbar
+      const sections = ['home', 'services', 'about', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -20,14 +36,21 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Home', section: 'home' },
+    { name: 'Services', section: 'services' },
+    { name: 'About', section: 'about' },
+    { name: 'Contact', section: 'contact' }
   ];
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth'
+      });
+      setIsMenuOpen(false);
+    }
   };
 
   return (
@@ -38,26 +61,27 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="flex items-center">
           <h1 className="text-2xl font-bold tracking-tight">
             <span className="text-smallai-white">Small </span>
             <span className="text-smallai-purple">AI</span>
           </h1>
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
+            <a
+              key={link.section}
+              href={`#${link.section}`}
+              onClick={(e) => { e.preventDefault(); scrollToSection(link.section); }}
               className={cn(
-                "nav-link text-sm font-medium transition-colors hover:text-smallai-purple",
-                isActive(link.path) ? "text-smallai-purple" : "text-smallai-white"
+                "nav-link text-sm font-medium transition-colors hover:text-white",
+                activeSection === link.section ? "text-smallai-purple" : "text-smallai-white"
               )}
             >
               {link.name}
-            </Link>
+            </a>
           ))}
           <Button 
             className="bg-smallai-purple hover:bg-smallai-purple-dark hover:text-white text-white rounded-full px-6 button-glow"
@@ -83,17 +107,17 @@ const Navbar = () => {
           <div className="md:hidden absolute top-full left-0 w-full bg-smallai-black py-4 border-t border-gray-800 animate-fade-in">
             <nav className="container mx-auto px-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
+                <a
+                  key={link.section}
+                  href={`#${link.section}`}
+                  onClick={(e) => { e.preventDefault(); scrollToSection(link.section); }}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-smallai-purple py-2",
-                    isActive(link.path) ? "text-smallai-purple" : "text-smallai-white"
+                    "text-sm font-medium transition-colors hover:text-white py-2",
+                    activeSection === link.section ? "text-smallai-purple" : "text-smallai-white"
                   )}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
-                </Link>
+                </a>
               ))}
               <Button 
                 className="bg-smallai-purple hover:bg-smallai-purple-dark hover:text-white text-white rounded-full px-6 w-full mt-4 button-glow"
