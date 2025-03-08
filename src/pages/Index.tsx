@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ServicesSection from '@/components/ServicesSection';
 import AboutSection from '@/components/AboutSection';
+import HowItWorksSection from '@/components/HowItWorksSection';
 import ContactSection from '@/components/ContactSection';
 import LogoCloud from '@/components/LogoCloud';
 import Footer from '@/components/Footer';
@@ -24,6 +25,7 @@ const Index = () => {
         <Hero />
         <LogoCloud />
         <ServicesSection />
+        <HowItWorksSection />
         <AboutSection />
         <ContactSection />
       </main>
