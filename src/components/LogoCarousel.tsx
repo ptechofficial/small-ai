@@ -22,78 +22,46 @@ const tools = [
 
 const LogoCarousel = () => {
   return (
-    <section className="py-12 bg-black dark:bg-black overflow-hidden">
+    <section className="py-12 bg-background dark:bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-sm uppercase tracking-wider text-smallai-purple mb-3 font-medium animate-reveal-from-top">Connect Your Tools</h2>
-          <p className="text-gray-300 max-w-3xl mx-auto animate-reveal-from-top text-balance">
+          <p className="text-foreground dark:text-foreground max-w-3xl mx-auto animate-reveal-from-top text-balance">
             Integrate AI into your app ecosystem. Connect and automate your favorite tools with AI-powered workflows.
           </p>
         </div>
         
         <div className="relative">
-          {/* First carousel - moving right */}
-          <div className="flex space-x-8 animate-carousel">
-            <div className="flex space-x-8 animate-move-right">
+          {/* Single row carousel - moving right */}
+          <div className="flex items-center overflow-hidden">
+            <div className="flex space-x-12 animate-move-right">
               {tools.map((tool, i) => (
                 <div 
                   key={`right-${i}`} 
-                  className="w-16 h-16 shrink-0 rounded-full bg-gray-800 bg-opacity-30 flex items-center justify-center p-2 backdrop-blur-sm border border-gray-700"
+                  className="w-14 h-14 shrink-0 rounded-full bg-muted bg-opacity-30 flex items-center justify-center p-2 backdrop-blur-sm border border-border"
                 >
                   <img 
                     src={tool.logo} 
                     alt={tool.name} 
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain transition-all duration-300 hover:scale-110"
+                    title={tool.name}
                   />
                 </div>
               ))}
             </div>
             
             {/* Duplicate set for infinite loop */}
-            <div className="flex space-x-8 animate-move-right">
+            <div className="flex space-x-12 animate-move-right">
               {tools.map((tool, i) => (
                 <div 
                   key={`right-dup-${i}`} 
-                  className="w-16 h-16 shrink-0 rounded-full bg-gray-800 bg-opacity-30 flex items-center justify-center p-2 backdrop-blur-sm border border-gray-700"
+                  className="w-14 h-14 shrink-0 rounded-full bg-muted bg-opacity-30 flex items-center justify-center p-2 backdrop-blur-sm border border-border"
                 >
                   <img 
                     src={tool.logo} 
                     alt={tool.name} 
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Second carousel - moving left (reversed) */}
-          <div className="flex space-x-8 mt-8 animate-carousel">
-            <div className="flex space-x-8 animate-move-left">
-              {[...tools].reverse().map((tool, i) => (
-                <div 
-                  key={`left-${i}`} 
-                  className="w-16 h-16 shrink-0 rounded-full bg-gray-800 bg-opacity-30 flex items-center justify-center p-2 backdrop-blur-sm border border-gray-700"
-                >
-                  <img 
-                    src={tool.logo} 
-                    alt={tool.name} 
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-            
-            {/* Duplicate set for infinite loop */}
-            <div className="flex space-x-8 animate-move-left">
-              {[...tools].reverse().map((tool, i) => (
-                <div 
-                  key={`left-dup-${i}`} 
-                  className="w-16 h-16 shrink-0 rounded-full bg-gray-800 bg-opacity-30 flex items-center justify-center p-2 backdrop-blur-sm border border-gray-700"
-                >
-                  <img 
-                    src={tool.logo} 
-                    alt={tool.name} 
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain transition-all duration-300 hover:scale-110"
+                    title={tool.name}
                   />
                 </div>
               ))}
