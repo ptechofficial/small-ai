@@ -1,7 +1,13 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+
+const TikTok = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+  </svg>
+);
 
 const AboutSection = () => {
   return (
@@ -49,14 +55,67 @@ const AboutSection = () => {
               ))}
             </div>
             
-            <Button 
-              className="bg-smallai-purple hover:bg-smallai-purple-dark text-white rounded-full px-6 button-glow"
-              asChild
-            >
-              <a href="https://calendly.com/prakarshgupta" target="_blank" rel="noopener noreferrer">
-                Book a Strategy Call <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
+            <div className="flex flex-col space-y-6">
+              <Button 
+                className="bg-smallai-purple hover:bg-smallai-purple-dark text-white rounded-full px-6 button-glow"
+                asChild
+              >
+                <a href="https://calendly.com/prakarshgupta" target="_blank" rel="noopener noreferrer">
+                  Book a Strategy Call <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              
+              <div className="mt-4">
+                <h4 className="text-sm uppercase tracking-wider text-smallai-purple mb-3 font-medium">Connect With Us</h4>
+                <div className="flex space-x-5">
+                  <a 
+                    href="https://x.com/prakkarshh" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-110"
+                    aria-label="Twitter"
+                  >
+                    <Twitter size={24} className="text-[#1DA1F2]" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/smallai.automation" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-110"
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={24} className="text-[#E1306C]" />
+                  </a>
+                  <a 
+                    href="https://www.youtube.com/@smallgrp" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-110"
+                    aria-label="YouTube"
+                  >
+                    <Youtube size={24} className="text-[#FF0000]" />
+                  </a>
+                  <a 
+                    href="https://vt.tiktok.com/ZSMxNePcG/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-110"
+                    aria-label="TikTok"
+                  >
+                    <TikTok className="text-[#000000]" />
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/prakarsh-gupta-5a1648167" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-110"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={24} className="text-[#0A66C2]" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
