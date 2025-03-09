@@ -74,35 +74,39 @@ const HowItWorksSection = () => {
           </h2>
         </div>
         
-        <div className="max-w-4xl mx-auto relative" ref={elementsRef}>
-          {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 md:-ml-0.5 w-1 h-full bg-gradient-to-b from-smallai-purple to-smallai-blue opacity-50"></div>
-          
-          {/* Process steps */}
-          {steps.map((step, index) => (
-            <div 
-              key={index} 
-              className={`process-step relative flex md:items-center mb-12 opacity-0`}
-              style={{ 
-                transform: 'translateY(20px)', 
-                transition: 'opacity 0.6s ease, transform 0.6s ease',
-                transitionDelay: `${index * 0.1}s` 
-              }}
-            >
-              {/* Circle with number */}
-              <div className="z-10 flex items-center justify-center shrink-0 w-16 h-16 md:mx-auto bg-smallai-purple rounded-full text-white text-2xl font-bold shadow-glow">
-                {step.number}
-              </div>
-              
-              {/* Content */}
-              <div className={`ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right md:-mt-8' : 'md:pl-12 md:ml-auto md:-mt-8'}`}>
-                <div className="bg-black bg-opacity-80 p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-smallai-purple shadow-lg backdrop-blur-sm">
-                  <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
+        <div className="max-w-7xl mx-auto relative" ref={elementsRef}>
+          {/* Process steps in single line */}
+          <div className="flex flex-col md:flex-row justify-between gap-6 relative">
+            {/* Timeline connector for desktop */}
+            <div className="hidden md:block absolute top-8 left-12 right-12 h-1 bg-gradient-to-r from-smallai-purple to-smallai-blue opacity-50"></div>
+            
+            {steps.map((step, index) => (
+              <div 
+                key={index} 
+                className="process-step flex-1 opacity-0"
+                style={{ 
+                  transform: 'translateY(20px)', 
+                  transition: 'opacity 0.6s ease, transform 0.6s ease',
+                  transitionDelay: `${index * 0.1}s` 
+                }}
+              >
+                <div className="flex flex-col items-center text-center">
+                  {/* Circle with number */}
+                  <div className="z-10 flex items-center justify-center shrink-0 w-16 h-16 bg-smallai-purple rounded-full text-white text-2xl font-bold shadow-glow mb-6">
+                    {step.number}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="w-full">
+                    <div className="bg-black bg-opacity-80 p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-smallai-purple shadow-lg backdrop-blur-sm h-full">
+                      <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
+                      <p className="text-gray-300">{step.description}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

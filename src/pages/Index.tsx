@@ -6,7 +6,7 @@ import ServicesSection from '@/components/ServicesSection';
 import AboutSection from '@/components/AboutSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import ContactSection from '@/components/ContactSection';
-import LogoCloud from '@/components/LogoCloud';
+import IntegrationSection from '@/components/IntegrationSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -23,7 +23,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <LogoCloud />
+        <IntegrationSection />
         <ServicesSection />
         <HowItWorksSection />
         <AboutSection />
