@@ -102,7 +102,7 @@ const AboutSection = () => {
                     className="transition-transform hover:scale-110"
                     aria-label="TikTok"
                   >
-                    <TikTok className="text-[#000000]" />
+                    <TikTok />
                   </a>
                   <a 
                     href="https://www.linkedin.com/in/prakarsh-gupta-5a1648167" 
