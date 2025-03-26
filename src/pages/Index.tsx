@@ -13,7 +13,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   useEffect(() => {
     // Set document title
-    document.title = "Small AI - AI Automation Agency";
+    document.title = "Small AI - AI Integration Experts";
     
     // Scroll to top when component mounts
     window.scrollTo(0, 0);

@@ -1,4 +1,6 @@
+
 import React, { useEffect, useRef } from 'react';
+import { Cpu, Zap, Database } from 'lucide-react';
 
 const IntegrationSection = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -92,6 +94,28 @@ const IntegrationSection = () => {
     },
   ];
 
+  // Added business integration cards like in the image
+  const businessIntegrationCards = [
+    {
+      icon: <Cpu className="h-10 w-10 text-[#8B5CF6]" />,
+      title: "AI Agents",
+      description: "24/7 operation, 0 human input",
+      color: "from-[#8B5CF6] to-[#9B87F5]"
+    },
+    {
+      icon: <Zap className="h-10 w-10 text-[#3B82F6]" />,
+      title: "Workflow Automation",
+      description: "30% cost reduction",
+      color: "from-[#3B82F6] to-[#48A7FF]"
+    },
+    {
+      icon: <Database className="h-10 w-10 text-[#6366F1]" />,
+      title: "Data Intelligence",
+      description: "2x faster decisions",
+      color: "from-[#6366F1] to-[#9B87F5]"
+    }
+  ];
+
   return (
     <section className="py-16 bg-black relative overflow-hidden">
       {/* Background gradients */}
@@ -102,21 +126,43 @@ const IntegrationSection = () => {
     
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <div className="inline-block mb-6">
-            <div className="gradient-border">
-              <div className="px-4 py-1">
-                <h2 className="text-sm uppercase tracking-wider text-gradient font-medium">Smart Connections</h2>
-              </div>
-            </div>
+          <div className="inline-block px-3 py-1 bg-[#1C1C30] border border-gray-800 rounded-full mb-6">
+            <p className="text-sm uppercase tracking-wider text-blue-400 font-medium">SMART CONNECTIONS</p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 hero-text-gradient animate-reveal-from-top">
-            Integrate AI into your <span className="relative">app ecosystem
-              <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-[#FF6B6B] via-[#9B87F5] to-[#48A7FF]"></span>
-            </span>
+          
+          <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#9B87F5] via-[#6366F1] to-[#48A7FF] text-transparent bg-clip-text animate-gradient-shift">
+            Integrate AI into your
           </h2>
+          
+          <div className="w-36 h-1 bg-gradient-to-r from-[#FF6B6B] via-[#9B87F5] to-[#48A7FF] mx-auto mb-6"></div>
+          
           <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-lg animate-reveal-from-top">
             Connect and automate your favorite tools with AI-powered workflows for seamless integration
           </p>
+          
+          {/* Business integration cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {businessIntegrationCards.map((card, index) => (
+              <div 
+                key={index}
+                className="bg-[#0F0F1A] border border-gray-800 p-6 rounded-xl relative overflow-hidden group hover:shadow-xl hover:border-blue-500/50 transition-all duration-300"
+                style={{
+                  backgroundImage: 'radial-gradient(circle at 100% 100%, rgba(60, 60, 90, 0.1) 0%, transparent 50%)'
+                }}
+              >
+                {/* Glowing accent */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                
+                {/* Icon */}
+                <div className="bg-[#1A1A2E] p-3 rounded-xl inline-block mb-4">
+                  {card.icon}
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
+                <p className="text-gray-400">{card.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="relative overflow-hidden">

@@ -104,22 +104,51 @@ const Hero = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { icon: <Cpu className="h-6 w-6 text-smallai-purple" />, title: "AI Agents", desc: "24/7 operation, 0 human input" },
-                { icon: <Zap className="h-6 w-6 text-smallai-purple" />, title: "Workflow Automation", desc: "30% cost reduction" },
-                { icon: <Database className="h-6 w-6 text-smallai-purple" />, title: "Data Intelligence", desc: "2x faster decisions" }
+                { 
+                  icon: <Cpu className="h-6 w-6 text-[#8B5CF6]" />,
+                  iconBg: "#8B5CF6",
+                  title: "AI Agents", 
+                  desc: "24/7 operation, 0 human input" 
+                },
+                { 
+                  icon: <Zap className="h-6 w-6 text-[#3B82F6]" />,
+                  iconBg: "#3B82F6", 
+                  title: "Workflow Automation", 
+                  desc: "30% cost reduction" 
+                },
+                { 
+                  icon: <Database className="h-6 w-6 text-[#6366F1]" />,
+                  iconBg: "#6366F1",
+                  title: "Data Intelligence", 
+                  desc: "2x faster decisions" 
+                }
               ].map((item, i) => (
                 <div 
                   key={i} 
-                  className={cn(
-                    "p-4 rounded-lg border border-gray-800 bg-black bg-opacity-50",
-                    "transition-all duration-300 hover:border-smallai-purple hover:bg-smallai-purple hover:bg-opacity-5"
-                  )}
+                  className="group p-6 rounded-xl border border-gray-800 bg-black bg-opacity-80 backdrop-blur-sm transition-all duration-300 hover:border-opacity-0 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] relative overflow-hidden"
                 >
-                  <div className="mb-3">{item.icon}</div>
-                  <h3 className="font-medium text-white mb-1">{item.title}</h3>
-                  <p className="text-gray-400 text-sm">{item.desc}</p>
+                  {/* Animated gradient border on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ filter: 'blur(1px)' }}></div>
+                  <div className="absolute inset-[1px] bg-black rounded-xl z-10"></div>
+                  
+                  <div className="relative z-20">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-lg mb-4" style={{ backgroundColor: `${item.iconBg}20` }}>
+                      {item.icon}
+                    </div>
+                    <h3 className="font-bold text-white mb-2 text-lg">{item.title}</h3>
+                    <p className="text-gray-400">{item.desc}</p>
+                  </div>
                 </div>
               ))}
+            </div>
+            
+            {/* New AI integration overlay image */}
+            <div className="mt-8 p-4 bg-black/30 backdrop-blur-md rounded-xl border border-smallai-purple/20 hidden md:block">
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
+                <p className="text-sm font-medium text-white">AI Agents Online</p>
+                <span className="text-gray-400 text-xs">80% reduction in response time</span>
+              </div>
             </div>
           </div>
           
@@ -132,9 +161,18 @@ const Hero = () => {
                 alt="Prakarsh Gupta - Small AI" 
                 className="w-full h-auto relative z-10 object-cover"
               />
+              
+              {/* New overlay box based on the image */}
+              <div className="absolute bottom-4 right-4 p-4 glassmorphism rounded-xl border border-smallai-purple/20 max-w-[180px] animate-fade-in z-20">
+                <div className="flex items-center">
+                  <div className="w-3 h-3 rounded-full bg-green-400 mr-2 animate-pulse"></div>
+                  <p className="text-xs font-medium text-white">AI Agents Online</p>
+                </div>
+                <p className="text-gray-300 text-xs mt-1">80% reduction in response time</p>
+              </div>
             </div>
             
-            <div className="absolute -bottom-6 -left-6 p-4 glassmorphism rounded-xl border border-smallai-purple border-opacity-20 w-48 animate-fade-in">
+            <div className="absolute -bottom-6 -left-6 p-4 glassmorphism rounded-xl border border-smallai-purple/20 w-48 animate-fade-in">
               <div className="flex items-center">
                 <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
                 <p className="text-xs font-medium text-white">AI Agents Online</p>
@@ -142,7 +180,7 @@ const Hero = () => {
               <p className="text-gray-300 text-xs mt-1">80% reduction in response time</p>
             </div>
             
-            <div className="absolute -top-4 -right-4 p-4 glassmorphism rounded-xl border border-smallai-purple border-opacity-20 w-48 animate-fade-in delay-200">
+            <div className="absolute -top-4 -right-4 p-4 glassmorphism rounded-xl border border-smallai-purple/20 w-48 animate-fade-in delay-200">
               <div className="flex items-center">
                 <div className="w-3 h-3 rounded-full bg-smallai-purple mr-2" />
                 <p className="text-xs font-medium text-white">Part of Small Group</p>

@@ -79,10 +79,14 @@ const HowItWorksSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16 animate-reveal-from-top">
-          <h2 className="text-sm uppercase tracking-wider text-smallai-purple mb-3 font-medium">Process</h2>
-          <h3 className="text-3xl md:text-5xl font-bold mb-8 leading-tight text-balance">
-            How It <span className="gradient-text">Works</span>
+          <div className="inline-block px-3 py-1 bg-[#1C1C30] border border-gray-800 rounded-full mb-6">
+            <p className="text-sm uppercase tracking-wider text-smallai-purple font-medium">Our Process</p>
+          </div>
+          
+          <h3 className="text-4xl md:text-6xl font-bold mb-8 leading-tight bg-gradient-to-r from-[#9B87F5] via-[#6366F1] to-[#48A7FF] text-transparent bg-clip-text animate-gradient-shift">
+            How It Works
           </h3>
+          
           <p className="text-gray-300 max-w-2xl mx-auto">
             Our proven four-step methodology ensures a seamless integration of AI into your business processes,
             delivering measurable results at every stage.
@@ -118,7 +122,7 @@ const HowItWorksSection = () => {
                   
                   {/* Content */}
                   <div className="w-full">
-                    <div className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-smallai-purple shadow-lg hover:shadow-glow h-full">
+                    <div className="bg-[#0F0F1A] p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-smallai-purple hover:shadow-lg hover:shadow-smallai-purple/10 h-full">
                       <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
                       <p className="text-gray-300">{step.description}</p>
                     </div>
