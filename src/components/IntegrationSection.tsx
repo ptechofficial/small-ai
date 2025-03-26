@@ -1,30 +1,4 @@
-
 import React, { useEffect, useRef } from 'react';
-
-// Brand logo components
-const N8nLogo = () => (
-  <img 
-    src="/lovable-uploads/4aa2a291-e8be-49d1-b597-b04b2683e64e.png" 
-    alt="n8n" 
-    className="w-12 h-12 object-contain"
-  />
-);
-
-const MakeLogo = () => (
-  <img 
-    src="/lovable-uploads/a32716cd-89c0-4785-977b-cae0df135f8f.png" 
-    alt="make.com" 
-    className="w-12 h-12 object-contain"
-  />
-);
-
-const GumloopLogo = () => (
-  <img 
-    src="/lovable-uploads/b0d9ff6b-e698-4ded-a94e-47434ec5ee12.png" 
-    alt="gumloop" 
-    className="w-12 h-12 object-contain"
-  />
-);
 
 const IntegrationSection = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -54,17 +28,17 @@ const IntegrationSection = () => {
     { 
       name: "n8n", 
       color: "#21DDBC", 
-      logo: <N8nLogo /> 
+      logo: <img src="/lovable-uploads/4aa2a291-e8be-49d1-b597-b04b2683e64e.png" alt="n8n" className="w-12 h-12 object-contain" />
     },
     { 
       name: "make.com", 
       color: "#EC4899", 
-      logo: <MakeLogo /> 
+      logo: <img src="/lovable-uploads/a32716cd-89c0-4785-977b-cae0df135f8f.png" alt="make.com" className="w-12 h-12 object-contain" />
     },
     { 
       name: "gumloop", 
       color: "#3B82F6", 
-      logo: <GumloopLogo /> 
+      logo: <img src="/lovable-uploads/b0d9ff6b-e698-4ded-a94e-47434ec5ee12.png" alt="gumloop" className="w-12 h-12 object-contain" />
     },
     { 
       name: "ChatGPT", 
@@ -119,14 +93,29 @@ const IntegrationSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-black">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 animate-reveal-from-top">
-            Integrate AI into your <span className="gradient-text">app ecosystem</span>
+    <section className="py-16 bg-black relative overflow-hidden">
+      {/* Background gradients */}
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-20 left-20 w-60 h-60 bg-[#FF6B6B] opacity-5 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-20 right-20 w-60 h-60 bg-[#48A7FF] opacity-5 rounded-full blur-[100px]"></div>
+      </div>
+    
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
+          <div className="inline-block mb-6">
+            <div className="gradient-border">
+              <div className="px-4 py-1">
+                <h2 className="text-sm uppercase tracking-wider text-gradient font-medium">Smart Connections</h2>
+              </div>
+            </div>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 hero-text-gradient animate-reveal-from-top">
+            Integrate AI into your <span className="relative">app ecosystem
+              <span className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-[#FF6B6B] via-[#9B87F5] to-[#48A7FF]"></span>
+            </span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-10 animate-reveal-from-top">
-            Connect and automate your favorite tools with AI-powered workflows
+          <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-lg animate-reveal-from-top">
+            Connect and automate your favorite tools with AI-powered workflows for seamless integration
           </p>
         </div>
         
@@ -138,26 +127,31 @@ const IntegrationSection = () => {
           {/* Scrolling carousel */}
           <div 
             ref={carouselRef}
-            className="flex overflow-x-auto py-8 scrollbar-hide gap-8"
+            className="flex overflow-x-auto py-12 scrollbar-hide gap-10"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {/* Double the items to create an infinite scrolling effect */}
             {[...integrations, ...integrations].map((integration, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 flex flex-col items-center justify-center gap-3"
+                className="flex-shrink-0 flex flex-col items-center justify-center gap-4 hover-scale"
               >
                 <div 
-                  className="w-16 h-16 rounded-full flex items-center justify-center mb-1 p-1"
-                  style={{ backgroundColor: integration.color, opacity: 0.9 }}
+                  className="w-20 h-20 rounded-full flex items-center justify-center p-1 glassmorphism"
+                  style={{ boxShadow: `0 0 20px ${integration.color}30` }}
                 >
-                  {integration.logo || (
-                    <span className="text-white font-bold text-xl">
-                      {integration.name.charAt(0)}
-                    </span>
-                  )}
+                  <div 
+                    className="w-full h-full rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: `${integration.color}15` }}
+                  >
+                    {integration.logo || (
+                      <span className="text-white font-bold text-xl">
+                        {integration.name.charAt(0)}
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <span className="text-sm font-medium text-white">{integration.name}</span>
+                <span className="text-sm font-medium text-white opacity-80 hover:opacity-100 transition-opacity">{integration.name}</span>
               </div>
             ))}
           </div>

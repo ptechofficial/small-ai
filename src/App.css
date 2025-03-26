@@ -45,6 +45,69 @@
 /* Add hover styles for buttons */
 .button-glow:hover {
   color: white !important;
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.7);
 }
 
+/* Enhanced gradient backgrounds */
+.bg-gradient-1 {
+  background: linear-gradient(135deg, #FF6B6B 0%, #9B87F5 50%, #48A7FF 100%);
+}
+
+.bg-gradient-2 {
+  background: linear-gradient(90deg, #9B87F5 0%, #48A7FF 100%);
+}
+
+.bg-gradient-3 {
+  background: linear-gradient(90deg, #FF6B6B 0%, #9B87F5 100%);
+}
+
+/* Background size for gradients */
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+.bg-pos-0 {
+  background-position: 0% 0%;
+}
+
+.bg-pos-100 {
+  background-position: 100% 100%;
+}
+
+/* Glass morphism styles */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+/* Cool hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated background */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #FF6B6B, #9B87F5, #48A7FF, #9B87F5);
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+}
