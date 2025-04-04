@@ -8,6 +8,7 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import ContactSection from '@/components/ContactSection';
 import IntegrationSection from '@/components/IntegrationSection';
 import PastWorkSection from '@/components/PastWorkSection';
+import NotionPortfolioSection from '@/components/NotionPortfolioSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -44,6 +45,7 @@ const Index = () => {
           <ServicesSection />
           <HowItWorksSection />
           <PastWorkSection />
+          <NotionPortfolioSection />
           <AboutSection />
           <ContactSection />
         </main>
